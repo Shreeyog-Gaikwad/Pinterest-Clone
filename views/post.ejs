@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="/stylesheets/post.css" />
+    <link rel="stylesheet" href="/stylesheets/navbar.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="navbar">
+      <i class="ri-pinterest-fill ri-admin-line ri-2x"></i>
+      <h2>Pinterest</h2>
+      <div class="links">
+        <a href="/profile">Profile</a>
+        <a href="/feed">Feed</a>
+        <a href="/logout" class="logout">Logout</a>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="img">
+        <img src="/images/uploads/<%= post.image %>" alt="" />
+      </div>
+      <div class="postdetails">
+        <div class="title">
+          <h4>Title</h4>
+          <p><%= post.title %></p>
+        </div>
+        <div class="description">
+          <h4>Desciption</h4>
+          <p><%= post.description ? post.description : "--" %></p>
+        </div>
+        <div class="info">
+          <h5>Username</h5>
+          <h5 class="faint">@<%= user.username%></h5>
+          <h5>Created At</h5>
+          <h5 class="faint"><%= formattedDate %> at <%= formattedTime %></h5>
+        </div>
+        <div class="btn">
+          <a href="/download/<%= post.image %>"><button class="download">Download</button></a>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/stylesheets/add.css" />
+    <link rel="stylesheet" href="/stylesheets/navbar.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet"/>
+</head>
+<body>
+    <div class="navbar">
+        <i class="ri-pinterest-fill ri-admin-line ri-2x"></i>
+        <h2>Pinterest</h2>
+        <div class="links">
+            <a href="/profile">Profile</a>
+            <a href="/feed">Feed</a>
+            <a href="/logout" class="logout">Logout</a>
+        </div>
+    </div>
+<div class="card-body">
+    <div class="card">
+        <div class="card-header">
+          <h1>Create New Post</h1>
+        </div>
+        <div class="card-body">
+          <form method="post" action="/createpost" enctype="multipart/form-data">
+            <label >Title:</label>
+            <input type="text" id="name" name="title" maxlength="30">
+      
+            <label>Description:</label>
+            <textarea type="text" name="description" maxlength="70" ></textarea>
+      
+            <label>Upload Image:</label>
+            <input type="file" name="postImg">
+
+            <input class="btn" type="submit" value="Create Post">
+          </form>
+        </div>
+        
+      </div>
+    </div>
+
+</body>
+</html>

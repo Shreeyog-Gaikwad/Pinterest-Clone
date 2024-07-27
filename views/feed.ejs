@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="/stylesheets/feed.css" />
+    <link rel="stylesheet" href="/stylesheets/navbar.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="navbar">
+      <i class="ri-pinterest-fill ri-admin-line ri-2x"></i>
+      <h2>Pinterest</h2>
+      <div class="links">
+        <a href="/profile">Profile</a>
+        <a href="/feed">Feed</a>
+        <a href="/logout" class="logout">Logout</a>
+      </div>
+    </div>
+
+    <div class="container flex">
+      <% posts.forEach(function(post){ %>
+      <div class="card">
+        <div class="card-img">
+          <a href="/post/<%=post._id %>"
+            ><img
+              src="/images/uploads/<%= post.image %>"
+              class="card-img-top"
+              alt="..."
+          /></a>
+        </div>
+        <a href="/post/<%=post._id %>"
+          ><h4 class="card-title"><%= post.title%></h4></a
+        >
+        <h6 class="card-user">
+          <% if (post.user && post.user.username) { %> @<%= post.user.username
+          %> <% } else { %> Anonymous <% } %>
+        </h6>
+      </div>
+      <% }) %>
+    </div>
+  </body>
+</html>

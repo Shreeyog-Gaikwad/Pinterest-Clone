@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/stylesheets/edit.css" />
+    <link rel="stylesheet" href="/stylesheets/navbar.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet"/>
+</head>
+<body>
+    <div class="navbar">
+        <i class="ri-pinterest-fill ri-admin-line ri-2x"></i>
+        <h2>Pinterest</h2>
+        <div class="links">
+            <a href="/profile">Profile</a>
+            <a href="/feed">Feed</a>
+            <a href="/logout" class="logout">Logout</a>
+        </div>
+    </div>
+    <div class="container">
+        <div class="content">
+          <img src="https://i.pinimg.com/originals/d3/d1/75/d3d175e560ae133f1ed5cd4ec173751a.png" alt="pin logo"
+            class="img1" />
+          <p class="header">Edit Info</p>
+    
+          <form action="/update/<%= user._id %>" method="post">
+            <input type="text" name="name" value="<%= user.name%>" class="detail"/><br />
+            <input type="text" name="username" value="<%= user.username%>" class="detail"/><br />
+            <input type="text" name="bio" value="<%= user.bio%>" placeholder="Bio" class="detail"/><br />
+            <p class="links">Add Links :</p>
+            <input type="url" name="instagram" class="detail" value="<%= user.instagram%>" placeholder="Instagram">
+            <input type="url" name="facebook" class="detail" value="<%= user.facebook%>" placeholder="Facebook">
+            <input type="url" name="linkedin" class="detail" value="<%= user.linkedin%>" placeholder="Linkedin">
+            <input type="url" name="website" class="detail" value="<%= user.website%>" placeholder="Website">
+            <input type="submit" value="Update" class="btn int">
+          </form>
+        </div> 
+      </div>
+    
+</body>
+</html>

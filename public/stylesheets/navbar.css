@@ -1,0 +1,42 @@
+.navbar{
+    width:auto;
+    height: 60px;
+    padding: 3px 20px;
+    display: flex;
+    flex-direction: row;
+    background-color: rgb(49, 47, 47);
+    align-items: center;
+}
+
+.navbar i{
+    color: red;
+    margin: 0px 15px;
+}
+
+.navbar h2{
+    width: 75%;
+    color: white;
+}
+
+.links{
+    display: flex;
+    flex-direction: row;
+    gap: 50px;
+    align-items: center;
+}
+
+.links a{
+    text-decoration: none;
+    color: white;
+}
+
+.logout{
+    background-color: red;
+    padding: 5px 9px;
+    border-radius: 20px;
+    font-weight: 600;
+}
+
+.logout:hover{
+    box-shadow: 0 4px 8px 0 #000000, 0 8px 22px 0 #000000;
+}

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <link rel="stylesheet" href="/stylesheets/profile.css" />
+  <link rel="stylesheet" href="/stylesheets/navbar.css">
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet"/>
+</head>
+
+<body>
+
+  <div class="navbar">
+    <i class="ri-pinterest-fill ri-admin-line ri-2x"></i>
+    <h2>Pinterest</h2>
+    <div class="links">
+        <a href="/profile">Profile</a>
+        <a href="/feed">Feed</a>
+        <a href="/logout" class="logout">Logout</a>
+    </div>
+</div>
+
+  <div id="algn">
+    <form hidden id="uploadImg" action="/uploadpic" method="post" enctype="multipart/form-data">
+      <input type="file" name="profImg">
+    </form>
+    <div id="card">
+      <div id="upper-bg">
+          <img
+            src="/images/uploads/<%= user.profileImg%>"
+            alt="" class="profile-pic" />
+            <span id="imgUpload" class="pencil">
+              <i class="ri-pencil-fill"></i>
+            </span>
+      </div>
+      <div id="lower-bg">
+        <div class="text">
+          <p class="name">
+            <%= user.name%>
+          </p>
+          <p class="username">@<%= user.username%>
+          </p>
+          <p class="description"><%= user.bio%>
+          </p>
+        </div>
+        <div id="icons">
+          <a href="<%=user.facebook%>" class="ico" target="_blank">
+            <img width="48" height="48" src="https://img.icons8.com/color/48/facebook-new.png" alt="facebook-new" />
+          </a>
+          <a href="<%=user.instagram%>" class="ico" target="_blank">
+            <img width="48" height="48" src="https://freepngimg.com/thumb/instagram/118541-logo-instagram-png-download-free.png" alt="gmail-new" />
+          </a>
+          <a href="<%=user.linkedin%>" class="ico" target="_blank">
+            <img width="48" height="48" src="https://img.icons8.com/color/48/linkedin.png" alt="linkedin" />
+          </a>
+          <a href="<%=user.website%>" class="ico" target="_blank">
+            <img width="48" height="48" src="https://static.vecteezy.com/system/resources/thumbnails/003/731/316/small/web-icon-line-on-white-background-image-for-web-presentation-logo-icon-symbol-free-vector.jpg" alt="website" />
+          </a>
+        </div>
+        <div id="btn">
+          <a class="msg" href="/edit">Edit Profile</a>
+          <a class="msg" href="/add">Add new Post</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<a href="/post" class="card">
+  <div class="container flex">
+    <% user.posts.forEach(function(post){ %>
+      <div class="card">
+        <div class="card-img">
+          <a href="/post/<%=post._id %>"><img src="/images/uploads/<%= post.image %>" class="card-img-top" alt="..." /></a>
+        </div>
+        <a href="/post/<%=post._id %>" class="card-title"><h4 ><%= post.title%></h4></a>
+      </div>
+      <% }) %>
+  </div>
+</a>
+
+
+  <script src="../javascripts/profile.js"></script>
+</body>
+
+</html>
